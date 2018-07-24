@@ -47,8 +47,8 @@
                                 @foreach($roles as $role)
                                 <tr>
                                     <td>
-                                        <input type="checkbox" id="remember_me" class="filled-in">
-                                        <label for="remember_me"></label>
+                                        <input type="checkbox" id="{{ $role->id }}" class="filled-in">
+                                        <label for="{{ $role->id }}"></label>
                                     </td>
                                     <td>{{ $role->name }}</td>
                                     <td>{{ $role->display_name }}</td>
@@ -56,9 +56,9 @@
                                     <td>
                                         <a href=""><button type="submit" class="btn btn-warning waves-effect"><i class="material-icons" style="font-size: 15px">remove_red_eye</i> View</button></a>
                                         <a href="{{ route('edit_role', $role->id) }}"><button type="submit" class="btn btn-info waves-effect"><i class="material-icons" style="font-size: 15px">edit</i> Edit</button></a>
-                                        {{-- {!! Form::open(['method'=>'DELETE', 'action'=>'AdminRolesController@destroy']) !!} --}}
+                                        {!! Form::open(['method'=>'DELETE', 'style'=>'display: inline;', 'action'=>['AdminRolesController@destroy', $role->id]]) !!}
                                         <button type="submit" class="btn btn-danger waves-effect"><i class="material-icons" style="font-size: 15px">delete</i> Delete</button>
-                                        {{-- {!! Form::close() !!} --}}
+                                        {!! Form::close() !!}
                                     </td>
                                 </tr>
                                 @endforeach

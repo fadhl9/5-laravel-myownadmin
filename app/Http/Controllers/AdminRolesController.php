@@ -91,6 +91,8 @@ class AdminRolesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // Execute
+        Role::findOrFail($id)->delete();
+        return redirect('/admin/roles');
     }
 }
