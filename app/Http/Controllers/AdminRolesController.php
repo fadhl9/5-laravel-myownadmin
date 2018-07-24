@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Role;
 use Illuminate\Http\Request;
 
 class AdminRolesController extends Controller
@@ -13,8 +14,10 @@ class AdminRolesController extends Controller
      */
     public function index()
     {
-        //
-        return view('admin.roles.index');
+        // Variables
+        $roles = Role::all();
+        // Execute
+        return view('admin.roles.index', compact('roles'));
     }
 
     /**
@@ -36,8 +39,9 @@ class AdminRolesController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        return 'hi';
+        // Execute
+        Role::create($request->all());
+        return redirect('/admin/roles');
     }
 
     /**
@@ -60,8 +64,9 @@ class AdminRolesController extends Controller
      */
     public function edit($id)
     {
-        //
-        return view('admin.roles.edit');
+        // Variables
+        $role = Role::findOrFail($id);
+        return view('admin.roles.edit', compact('role'));
     }
 
     /**
@@ -73,7 +78,9 @@ class AdminRolesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // Execute
+        Role::findOrFail($id)->update($request->all());
+        return redirect('/admin/roles');
     }
 
     /**

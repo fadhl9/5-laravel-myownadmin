@@ -1,4 +1,4 @@
-<head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -27,4 +27,3 @@
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="{{ asset('plugins/adminbsb-materialdesign/css/themes/all-themes.css') }}" rel="stylesheet" />
-</head>

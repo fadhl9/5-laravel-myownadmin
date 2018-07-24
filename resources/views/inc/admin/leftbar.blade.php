@@ -34,7 +34,7 @@
                 </a>
             </li>
             {{-- Roles --}}
-            <li class="{{ Request::is('admin/roles') ? 'active' : '' }}">
+            <li class="{{ Request::is('admin/roles') || Request::is('admin/roles/create')  || url('admin/roles/{$role->id}/edit') ? 'active' : '' }}">
                 <a href="{{ route('roles') }}">
                     <i class="material-icons">lock</i>
                     <span>Roles</span>

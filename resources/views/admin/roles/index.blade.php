@@ -3,7 +3,7 @@
 <section class="content">
     <div class="container-fluid">
         <div class="block-header">
-            <h2>ROLES TABLE</h2>
+            <h2>ROLES</h2>
         </div>
     </div>
     <!-- Basic Examples -->
@@ -12,7 +12,8 @@
             <div class="card">
                 <div class="header">
                     <h2>
-                        Roles
+                        Roles Table
+                        <a href="{{ route('create_role') }}" style="margin-left: 15px;"><button type="submit" class="btn btn-success waves-effect"><i class="material-icons" style="font-size: 15px">add_circle</i> Add</button></a>
                     </h2>
                     <ul class="header-dropdown m-r--5">
                         <li class="dropdown">
@@ -32,7 +33,10 @@
                         <table class="table table-hover js-basic-example dataTable">
                             <thead>
                                 <tr>
-                                    <th>box</th>
+                                    <th>
+                                        <input type="checkbox" id="remember_me" class="filled-in">
+                                        <label for="remember_me"></label>
+                                    </th>
                                     <th>Name</th>
                                     <th>Display Name</th>
                                     <th>Created Date</th>
@@ -40,19 +44,24 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach($roles as $role)
                                 <tr>
-                                    <td>box</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
                                     <td>
-                                        {!! Form::open(['method'=>'POST', 'action'=>'AdminRolesController@store']) !!}
-                                        <button type="submit" class="btn btn-warning waves-effect"><i class="material-icons" style="font-size: 15px">remove_red_eye</i> View</button>
-                                        <button type="submit" class="btn btn-info waves-effect"><i class="material-icons" style="font-size: 15px">edit</i> Edit</button>
+                                        <input type="checkbox" id="remember_me" class="filled-in">
+                                        <label for="remember_me"></label>
+                                    </td>
+                                    <td>{{ $role->name }}</td>
+                                    <td>{{ $role->display_name }}</td>
+                                    <td>{{ $role->created_at }}</td>
+                                    <td>
+                                        <a href=""><button type="submit" class="btn btn-warning waves-effect"><i class="material-icons" style="font-size: 15px">remove_red_eye</i> View</button></a>
+                                        <a href="{{ route('edit_role', $role->id) }}"><button type="submit" class="btn btn-info waves-effect"><i class="material-icons" style="font-size: 15px">edit</i> Edit</button></a>
+                                        {{-- {!! Form::open(['method'=>'DELETE', 'action'=>'AdminRolesController@destroy']) !!} --}}
                                         <button type="submit" class="btn btn-danger waves-effect"><i class="material-icons" style="font-size: 15px">delete</i> Delete</button>
-                                        {!! Form::close() !!}
+                                        {{-- {!! Form::close() !!} --}}
                                     </td>
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
