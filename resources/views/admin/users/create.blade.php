@@ -43,7 +43,7 @@
                                 <div class="form-group form-float form-group-lg">
                                     <div class="form-line">
                                         {!! Form::label('name', 'Name', ['class'=>'form-label']) !!}
-                                        {!! Form::text('name', null, ['class'=>'form-control']) !!}
+                                        {!! Form::text('name', null, ['class'=>'form-control', 'required' => 'required']) !!}
                                     </div>
                                 </div> 
                                 <!-- #END# NAME -->
@@ -52,7 +52,7 @@
                                 <div class="form-group form-float form-group-lg">
                                     <div class="form-line">
                                         {!! Form::label('email', 'Email', ['class'=>'form-label']) !!}
-                                        {!! Form::email('email', null, ['class'=>'form-control email']) !!}
+                                        {!! Form::email('email', null, ['class'=>'form-control email', 'required' => 'required']) !!}
                                     </div>
                                 </div>
                                 <!-- #END# Email -->
@@ -68,7 +68,7 @@
                                 <!-- #END# Password -->
 
                                 <!--  Role-Select -->
-                                {!! Form::select('role_id', [''=>'--Choose a role--'] + $roles, null, ['class'=>'form-control show-tick']) !!}
+                                {!! Form::select('role_id', [''=>'--Choose a role--'] + $roles, null, ['class'=>'form-control show-tick' , 'required' => 'required']) !!}
                                 <!-- #END# Role-Select -->
 
                                 <!-- Submit Button -->
