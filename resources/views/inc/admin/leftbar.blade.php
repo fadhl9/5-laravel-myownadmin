@@ -22,6 +22,29 @@
         </div>
     </div>
     <!-- #User Info -->
+
+
+{{-- {{ dd(Route::currentRouteName()) }} --}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- Menu -->
     <div class="menu">
         <ul class="list">
@@ -34,14 +57,14 @@
                 </a>
             </li>
             {{-- Roles --}}
-            <li class="{{ Request::is('admin/roles') || Request::is('admin/roles/create')  || url('admin/roles/{$role->id}/edit') ? 'active' : '' }}">
+            <li class="{{ Request::is('admin/roles') || Request::is('admin/roles/create') || Route::currentRouteName() == 'edit_role' ? 'active' : '' }}">
                 <a href="{{ route('roles') }}">
                     <i class="material-icons">lock</i>
                     <span>Roles</span>
                 </a>
             </li>
             {{-- Users --}}
-            <li class="{{ Request::is('admin/users') ? 'active' : '' }}">
+            <li class="{{ Request::is('admin/users') || Request::is('admin/users/create') || Route::currentRouteName() == 'edit_user' ? 'active' : '' }}">
                 <a href="{{ route('users') }}">
                     <i class="material-icons">person</i>
                     <span>Users</span>
@@ -55,7 +78,7 @@
                 </a>
             </li>
             {{-- Posts --}}
-            <li class="{{ Request::is('admin/posts') ? 'active' : '' }}">
+            <li class="{{ Request::is('admin/posts') || Request::is('admin/posts/create') || Route::currentRouteName() == 'edit_post' ? 'active' : '' }}">
                 <a href="{{ route('posts') }}">
                     <i class="material-icons">assignment</i>
                     <span>Posts</span>
@@ -69,7 +92,7 @@
                 </a>
             </li>
             {{-- Categories --}}
-            <li class="{{ Request::is('admin/categories') ? 'active' : '' }}">
+            <li class="{{ Request::is('admin/categories') || Request::is('admin/categories/create') || Route::currentRouteName() == 'edit_category' ? 'active' : '' }}">
                 <a href="{{ route('categories') }}">
                     <i class="material-icons">donut_small</i>
                     <span>Categories</span>

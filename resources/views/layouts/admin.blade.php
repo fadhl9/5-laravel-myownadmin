@@ -8,7 +8,7 @@
 </head>
 <body class="theme-red">
     <!-- Page Loader -->
-    @include('inc.admin.loader')
+    {{-- @include('inc.admin.loader') --}}
     <!-- #END# Page Loader -->
     <!-- Overlay For Sidebars -->
     <div class="overlay"></div>

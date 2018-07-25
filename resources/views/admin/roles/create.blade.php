@@ -35,7 +35,7 @@
                                 <div class="form-group form-float form-group-lg">
                                     <div class="form-line">
                                         {!! Form::label('name', 'Name', ['class'=>'form-label']) !!}
-                                        {!! Form::text('name', null, ['class'=>'form-control']) !!}
+                                        {!! Form::text('name', null, ['class'=>'form-control', 'required' => 'required']) !!}
                                     </div>
                                 </div> 
                                 <!-- #END# NAME -->
@@ -43,7 +43,7 @@
                                 <div class="form-group form-float form-group-lg">
                                     <div class="form-line">
                                         {!! Form::label('display_name', 'Display Name', ['class'=>'form-label']) !!}
-                                        {!! Form::text('display_name', null, ['class'=>'form-control']) !!}
+                                        {!! Form::text('display_name', null, ['class'=>'form-control', 'required' => 'required']) !!}
                                     </div>
                                 </div>
                                 <!-- #END# Display Name -->
